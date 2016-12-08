@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarStore.WebUI.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -13,6 +14,7 @@ namespace CarStore.WebUI
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            config.DependencyResolver = new DependencyService();
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

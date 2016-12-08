@@ -17,7 +17,10 @@ namespace CarStore.WebUI
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);            
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            System.Web.Mvc.DependencyResolver.SetResolver((IDependencyResolver)
+                GlobalConfiguration.Configuration.DependencyResolver);   
         }
     }
 }
